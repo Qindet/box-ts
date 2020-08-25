@@ -1,0 +1,4 @@
+
+export const ADD_RED_ITEM_EDGE = 'ADD_RED_ITEM_EDGE'
+export const DELETE_RED_ITEM_EDGE = 'DELETE_RED_ITEM_EDGE'
+

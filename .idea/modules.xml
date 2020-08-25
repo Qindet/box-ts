@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ts-listbox.iml" filepath="$PROJECT_DIR$/.idea/ts-listbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ts-cube.iml" filepath="$PROJECT_DIR$/.idea/ts-cube.iml" />
     </modules>
   </component>
 </project>
