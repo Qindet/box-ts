@@ -1,8 +1,9 @@
 import React, {FC} from "react";
-import {IEdgeListItem} from "../../../interfaces";
-import './edge-list-item.css'
 
-const EdgeListItem:FC<IEdgeListItem> = ({item}) => {
+import './edge-list-item.css'
+import {EdgeListItemPropsType} from "../../../ts-types/props-types";
+
+const EdgeListItem:FC<EdgeListItemPropsType> = ({item,onDelete}) => {
 
     return <>
         <div className="col s12 m7">
@@ -18,7 +19,7 @@ const EdgeListItem:FC<IEdgeListItem> = ({item}) => {
                     <div className="card-action">
                         <a href="#">This is a link</a>
                     </div>
-                    <i
+                    <i onClick={() => onDelete(item.id)}
                         className="medium material-icons delete-icon">delete</i>
 
                 </div>
