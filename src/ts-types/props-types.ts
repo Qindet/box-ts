@@ -9,3 +9,7 @@ export type EdgeListItemPropsType = {
 export type EdgeListPropsType = {
     id: number
 }
+
+export type WriteComponentPropsType = {
+    onAdd: (item:TodoItemType)=>void
+}

@@ -1,18 +1,22 @@
 
 import {ADD_RED_ITEM_EDGE,DELETE_RED_ITEM_EDGE} from "./types";
 import {TodoItemType} from "../ts-types/main-types";
-import {AddRedItemActionType, DeleteRedItemActionType} from "../ts-types/action-types";
+import {
+    AddRedItemActionCreatorType,
+    AddRedItemActionType,
+    DeleteRedItemActionCreatorType,
+    DeleteRedItemActionType
+} from "../ts-types/action-types";
 
 
-
- export const addRedItem = (payload:TodoItemType): AddRedItemActionType => {
+ export const addRedItem:AddRedItemActionCreatorType = (payload) => {
     return {
         type: ADD_RED_ITEM_EDGE,
         payload
     }
 }
 
-export const deleteRedItem = (payload:number): DeleteRedItemActionType => {
+export const deleteRedItem:DeleteRedItemActionCreatorType = (payload) => {
     return {
         type: DELETE_RED_ITEM_EDGE,
         payload

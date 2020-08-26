@@ -1,14 +1,23 @@
-import React, {FC, useContext, useState} from "react";
+import React, {FC, FormEvent, useContext, useState} from "react";
 import {ContextApp} from "../../../reducer";
 import {addRedItem} from "../../../actions/cube";
+import {WriteComponentPropsType} from "../../../ts-types/props-types";
+import {TodoItemType} from "../../../ts-types/main-types";
 
-const WriteComponent:FC = () => {
+
+const WriteComponent:FC<WriteComponentPropsType> = ({onAdd}) => {
     const [type,setType] = useState<string>('')
     const [todo,setTodo] = useState<string>('')
     const {state, dispatch} = useContext(ContextApp)
-    const submitHelper:(e:any)=>void = (e) => {
+    const submitHelper = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        dispatch(addRedItem({type,todo,id:Date.now()}))
+        const item:TodoItemType = {
+            type,
+            todo,
+            id:Date.now()
+        }
+
+        onAdd(item)
     }
     return <>
         <form onSubmit={e=>submitHelper(e)}

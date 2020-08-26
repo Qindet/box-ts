@@ -23,15 +23,19 @@ const EdgeList:FC<EdgeListPropsType> = ({id}) => {
 
     const {state, dispatch} = useContext(ContextApp)
     const items: Array<TodoItemType> = todosSelector(state,Object.keys(state),+id)
-    const [addItem,deleteRedItem]:Array<any> = dispatchHelper(id)
-    console.log(dispatchHelper(id)[1]())
+    const [addItem,deleteItem]:Array<any> = dispatchHelper(+id)
     const onDelete = (id:number) => {
-     // dispatch(deleteItem(id))
+        dispatch(deleteItem(id))
+    }
+    const onAdd = (item:TodoItemType) => {
+        dispatch(addItem(id))
+        // localStorage.setItem(id.toString(),JSON.stringify(item))
+
     }
 
     return (
         <div>
-            <WriteComponent/>
+            <WriteComponent onAdd={(item)=>onAdd(item)}/>
                 {items?items.map(item=><EdgeListItem onDelete={onDelete}
                 key={item.id} item={item} />):null}
         </div>
