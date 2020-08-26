@@ -17,7 +17,7 @@ const App:FC = () => {
             <BrowserRouter>
                 <Nav />
                 <Route path="/" component={Cube} exact/>
-                <Route path="/cube/:id" render={({match})=>
+                <Route path="/edge/:id" render={({match})=>
                 {
                     const {id} = match.params
                     return <EdgeList id={id}/>}}
